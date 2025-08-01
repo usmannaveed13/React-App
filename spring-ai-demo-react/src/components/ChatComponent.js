@@ -10,7 +10,7 @@ function ChatComponent() {
             const data = await response.text();
             setChatResponse(data);
         } catch (error) {
-            console.error("Error generating image : ", error)
+            console.error("Error generating response : ", error)
         }
     }
 
@@ -24,6 +24,9 @@ function ChatComponent() {
               placeholder="Enter a prompt for AI"
             />
             <button onClick={askAI}>Ask AI</button>
+            <div className="output">
+                <p>{chatResponse}</p>
+            </div>
         </div>
     );
 }
